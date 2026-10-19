@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "description": "D-Maker 팀 공용 기본 사이즈. 이 파일을 수정해 배포하면 모든 사용자의 기본 사이즈가 바뀝니다. textLayout: center(가운데 정렬 타이틀) / left(왼쪽 정렬 타이틀) / none(기본 텍스트 없음)",
+  "sizes": [
+    { "id": "main",    "label": "메인 배너",   "w": 750,  "h": 750,  "textLayout": "center" },
+    { "id": "sub",     "label": "서브 배너",   "w": 750,  "h": 1000, "textLayout": "left" },
+    { "id": "product", "label": "상품 이미지", "w": 1060, "h": 1060, "textLayout": "none" },
+    { "id": "wide",    "label": "가로 배너",   "w": 1200, "h": 600,  "textLayout": "none" },
+    { "id": "coupon",  "label": "띠배너",      "w": 1200, "h": 300,  "textLayout": "none" }
+  ]
+}

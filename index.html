@@ -18,17 +18,37 @@
   <div class="layout">
     <aside class="left-column">
       <section class="panel">
-        <h2>사이즈 직접 입력</h2>
-        <div class="custom-size">
-          <span class="field-label">원하는 크기 (px)</span>
-          <div class="row">
-            <input type="number" id="customW" placeholder="너비" min="10" max="5000">
-            <span class="x">×</span>
-            <input type="number" id="customH" placeholder="높이" min="10" max="5000">
+        <h2 class="panel-title-row">사이즈 관리 <span class="badge" id="sizeSourceBadge">팀 기본값</span></h2>
+        <div class="size-list" id="sizeList"></div>
+
+        <details class="size-add" id="sizeAddBox">
+          <summary>＋ 새 사이즈 추가</summary>
+          <div class="custom-size">
+            <span class="field-label">이름</span>
+            <input type="text" id="customLabel" class="size-input" placeholder="예: 기획전 배너" maxlength="20">
+            <span class="field-label">크기 (px)</span>
+            <div class="row">
+              <input type="number" id="customW" placeholder="너비" min="10" max="5000">
+              <span class="x">×</span>
+              <input type="number" id="customH" placeholder="높이" min="10" max="5000">
+            </div>
+            <span class="field-label">기본 텍스트</span>
+            <select id="customLayout" class="size-input">
+              <option value="none">없음</option>
+              <option value="center">가운데 타이틀</option>
+              <option value="left">왼쪽 타이틀</option>
+            </select>
+            <button class="btn full" id="applyCustom">사이즈 추가</button>
           </div>
-          <button class="btn full" id="applyCustom">사이즈 추가</button>
-          <div class="info-line small-note">추가하면 아래 목록에 나타나고 바로 편집할 수 있어요.</div>
+        </details>
+
+        <div class="btn-row size-tools">
+          <button class="btn" id="exportSizesBtn" type="button" title="현재 사이즈 목록을 sizes.json 파일로 저장">내보내기</button>
+          <button class="btn" id="importSizesBtn" type="button" title="sizes.json 파일 불러오기">불러오기</button>
+          <input type="file" id="importSizesInput" accept="application/json,.json" hidden>
         </div>
+        <button class="btn full" id="resetSizesBtn" type="button">팀 기본값으로 복원</button>
+        <div class="info-line small-note">수정한 사이즈는 이 브라우저에 자동 저장돼요.<br>팀 전체 기본값은 내보낸 파일로 sizes.json을 교체하면 바뀌어요.</div>
       </section>
 
       <section class="panel">
